@@ -1,5 +1,3 @@
 #!/usr/bin/python3
-char = ord('a') #ascii
-while (char <= ord('z')):
-    print(chr(char), end = '')
-    char += 1
+for i in range(26):
+    print(chr(ord('a') + i), end = '')
