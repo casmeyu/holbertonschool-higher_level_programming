@@ -13,9 +13,9 @@ int check_cycle(listint_t *list)
 	listint_t *past_node[1024];
 
 	if (!list)
-		return (0);
+		return (-1);
 
-	while (list && i < 10)
+	while (list)
 	{
 		past_node[i] = list;
 		i++;
