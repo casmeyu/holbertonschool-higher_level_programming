@@ -13,7 +13,9 @@ int main(void)
     listint_t *head;
 
     head = NULL;
+    
     add_nodeint_end(&head, 0);
+
     add_nodeint_end(&head, 1);
     add_nodeint_end(&head, 2);
     add_nodeint_end(&head, 3);
@@ -28,6 +30,10 @@ int main(void)
     insert_node(&head, 27);
     insert_node(&head, 1025);
     insert_node(&head, -20);
+    insert_node(&head, 2);
+    insert_node(&head, 97);
+    insert_node(&head, 5);
+    insert_node(&head, 1023);
     print_listint(head);
 
     free_listint(head);
