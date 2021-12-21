@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-import string
-alphabet = string.ascii_lowercase
-
+char = ord('a') #ascii
+alphabet = ""
+while (char <= ord('z')):
+    alphabet += chr(char)
+    char += 1 
 print(alphabet, end = '')
