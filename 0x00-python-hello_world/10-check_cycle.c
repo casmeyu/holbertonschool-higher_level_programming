@@ -9,18 +9,22 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *tortuga = list, *liebre = list;
+	int i = 0, j = 0;
+	listint_t *past_node[1024];
 
 	if (!list)
 		return (0);
 
-	while (liebre->next != NULL && liebre->next->next != NULL)
+	while (list && i < 10)
 	{
-		liebre = liebre->next->next;
-		tortuga = tortuga->next;
-
-		if (liebre == tortuga) /* liebre catched up */
-			return (1);
+		past_node[i] = list;
+		i++;
+		for (j = 0; past_node[j]; j++)
+		{
+			if (list->next == past_node[j])
+				return (1);
+		}
+		list = list->next;
 	}
 	return (0);
 }
