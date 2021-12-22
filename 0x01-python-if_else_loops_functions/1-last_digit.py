@@ -2,7 +2,7 @@
 import random
 import math
 number = random.randint(-10000, 10000)
-#digit = abs(number) % 10
+# digit = abs(number) % 10
 digit = int(math.fmod(number, 10))
 answer = "Last digit of {:d} is {:d}".format(number, digit)
 if (digit > 5):
