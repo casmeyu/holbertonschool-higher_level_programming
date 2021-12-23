@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import sys, hidden_4
 if __name__ == "__main__":
-    for item in dir(hidden_4):
+    items = dir(hidden_4)
+    items.sort()
+    for item in items:
         if (item[0] != "_" or item[1] != "_"):
             print(item)
