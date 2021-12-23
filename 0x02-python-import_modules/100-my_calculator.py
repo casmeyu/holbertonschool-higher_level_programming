@@ -20,6 +20,9 @@ def main():
         res = mul(a, b)
     elif op == "/":
         res = div(a, b)
+    else:
+        print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
 
     print("{:d} {} {:d} = {:d}".format(a, op, b, res))
 
