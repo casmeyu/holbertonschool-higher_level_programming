@@ -2,10 +2,12 @@
 
 def no_c(my_string):
     count = 0
-    for char in my_string:
+    copy = my_string[:]
+
+    for char in copy:
         if (char == 'c' or char == 'C'):
-            my_string = my_string[:count] + my_string[count + 1:]
+            copy = copy[:count] + copy[count + 1:]
             continue
         count += 1
 
-    return (my_string)
+    return (copy)
