@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+
 def no_c(my_string):
-    count:int = 0
+    count = 0
     for char in my_string:
         print(char)
         if (char == 'c' or char == 'C'):
