@@ -1,5 +1,4 @@
-#!/usr/bin/python
-
+#!/usr/bin/python3
 
 def add_tuple(tuple_a=(), tuple_b=()):
     tuple_c = (0, 0)
