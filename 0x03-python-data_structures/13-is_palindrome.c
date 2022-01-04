@@ -43,7 +43,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *origin = *head, *rev = *head;
 
-	if (!head)
+	if (!(*head))
 		return (1);
 
 	reverse_listint(&rev);
