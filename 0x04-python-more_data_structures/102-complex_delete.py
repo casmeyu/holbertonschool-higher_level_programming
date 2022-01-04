@@ -5,9 +5,8 @@ def complex_delete(a_dictionary, value):
         while br:
             for key in a_dictionary:
                 if a_dictionary[key] == value:
-                    del a_dictionary[key]
+                    a_dictionary.pop(key)
                     break
-                else:
-                    br = False
+            br = False
 
     return (a_dictionary)
