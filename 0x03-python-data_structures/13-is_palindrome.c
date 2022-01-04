@@ -42,26 +42,26 @@ listint_t *reverse_listint(listint_t **head)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *origin = *head, *rev = *head;
+	listint_t *real = *head, *rev = *head;
 
 	if (!(*head))
 		return (1);
 
-	while (origin->next && origin->next->next)
+	while (real->next && real->next->next)
 	{
-		rev = rev->next;
-	        origin = origin->next->next;
+		rev = rev->next; /* allows rev to move till half of real*/
+	        real = real->next->next;
 	}
-	origin = *head;
+	real = *head;
 
 	reverse_listint(&rev);
 
-	while (origin && rev)
+	while (real && rev)
 	{
-		if (origin->n != rev->n)
+		if (real->n != rev->n)
 			return (0);
 
-		origin = origin->next;
+		real = real->next;
 		rev = rev->next;
 	}
 	return (1);
