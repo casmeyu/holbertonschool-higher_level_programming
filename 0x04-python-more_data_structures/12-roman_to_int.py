@@ -24,9 +24,3 @@ def roman_to_int(roman_string):
     res += romans[roman_string[idx]]
 
     return res
-
-#XXI
-#IV
-#CXXIV
-#XCIX
-#LXXXIX
