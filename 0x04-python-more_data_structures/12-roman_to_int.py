@@ -21,6 +21,12 @@ def roman_to_int(roman_string):
         else:
             res += romans[roman_string[idx - 1]]
 
-    res += romans[roman_string[idx - 1]]
+    res += romans[roman_string[idx]]
 
     return res
+
+#XXI
+#IV
+#CXXIV
+#XCIX
+#LXXXIX
