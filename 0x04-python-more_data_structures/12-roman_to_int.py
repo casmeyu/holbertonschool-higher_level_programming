@@ -11,8 +11,8 @@ def roman_to_int(roman_string):
     }
     res = 0
     idx = 1
-    if (not roman_string or type(roman_string) != 'str'):
-        return (res)
+    if (not roman_string or type(roman_string) != str):
+        return (0)
 
     for idx in range(1, len(roman_string)):
         if romans[roman_string[idx - 1]] < romans[roman_string[idx]]:
