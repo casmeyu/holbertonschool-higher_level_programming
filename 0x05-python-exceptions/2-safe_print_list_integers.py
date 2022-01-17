@@ -7,7 +7,8 @@ def safe_print_list_integers(my_list=[], x=0):
             print("{:d}".format(my_list[i]), end='')
             count += 1
         except Exception as ex:
-            if (type(ex).__name__ == "ValueError"):
+            errname = type(ex).__name__
+            if (errname == "ValueError" or errname == "TypeError"):
                 continue
             else:
                 break
