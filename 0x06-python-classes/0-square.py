@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This is a square module
+"""
+
+
 class Square():
     """Description of Square class/object
 
