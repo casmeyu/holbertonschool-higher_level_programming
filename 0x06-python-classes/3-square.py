@@ -11,3 +11,6 @@ class Square():
         except Exception as ex:
             print(ex)
             del self
+
+    def area(self):
+        return(self.__size**2)
