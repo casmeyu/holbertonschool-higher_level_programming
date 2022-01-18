@@ -15,7 +15,7 @@ class Square():
 
     """
 
-    def check_values(self, size=1, position=(0, 0)):
+    def check_values(self, size=0, position=(0, 0)):
         """check if the __init__ values are correct"""
         if (type(size) != int):
             raise TypeError("size must be an integer")
