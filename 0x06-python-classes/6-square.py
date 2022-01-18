@@ -67,13 +67,12 @@ class Square():
         """prins the square on the terminal"""
         if (self.__size == 0):
             print()
-            return
-
-        for i in range(self.__position[1]):
-            print()
-        for line in range(self.__size):
-            for i in range(self.__position[0]):
-                print("_", end='')
-            for col in range(self.__size):
-                print("#", end='')
-            print()
+        else:
+            for i in range(self.__position[1]):
+                print()
+            for line in range(self.__size):
+                for i in range(self.__position[0]):
+                    print("_", end='')
+                for col in range(self.__size):
+                    print("#", end='')
+                print()
