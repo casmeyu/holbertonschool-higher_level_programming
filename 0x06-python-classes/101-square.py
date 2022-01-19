@@ -71,7 +71,7 @@ class Square():
                 res += "\n"
             for line in range(self.__size):
                 for i in range(self.__position[0]):
-                    res += "_"
+                    res += " "
                 for col in range(self.__size):
                     res += "#"
                 if (line < (self.__size - 1)):
