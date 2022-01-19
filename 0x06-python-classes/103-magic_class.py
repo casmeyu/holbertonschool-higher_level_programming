@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from dis import dis
 """Reverse engenieered from Python Bytecode"""
 
 
@@ -22,5 +21,3 @@ class MagicClass:
     def circumference(self, radius):
         """Circumference of the circle"""
         return (2 * math.pi) * self.__radius
-
-print(dis(MagicClass))
