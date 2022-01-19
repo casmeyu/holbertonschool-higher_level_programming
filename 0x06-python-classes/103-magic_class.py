@@ -8,11 +8,10 @@ class MagicClass:
         """Creation of the circle"""
         self.__radius = 0
         if (type(radius) is not int):
-                if (type(radius) is not float):
-                    raise TypeError("radius must be a number")
-        
+            if (type(radius) is not float):
+                raise TypeError("radius must be a number")
+
         self.__radius = radius
-        
 
     def area(self):
         """Area of a circle"""
