@@ -1,24 +1,23 @@
 #!/usr/bin/python3
-
-"""Creates a magic cirle"""
+"""Reverse engenieered from Python Bytecode"""
 import math
 
 
 class MagicClass:
-    """Class: magic circle"""
+    """Class: Its a magic circle"""
     def __init__(self, radius=0):
-        """constructor method"""
+        """Creation of the circle"""
         self.__radius = 0
-        if type(radius) is not int:
-            if type(radius) is not float:
+        if (type(radius) is not int):
+            if (type(radius) is not float):
                 raise TypeError("radius must be a number")
         self.__radius = radius
         return None
 
     def area(self):
-        """calculates area of a circle"""
-        return (self.__radius ** 2) * math.pi
+        """Area of a circle"""
+        return((self.___radius ** 2) * math.pi)
 
     def circumference(self):
-        """calculates the circumference"""
-        return (2 * math.pi) * self.__radius
+        """Circumference of the circle"""
+        return((2 * math.pi) * self.__radius)
