@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Reverse engenieered from Python Bytecode"""
+import math
 
 
 class MagicClass:
