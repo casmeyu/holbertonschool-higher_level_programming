@@ -1,0 +1,55 @@
+The ``example`` module
+======================
+
+Using ``add_integer``
+-------------------
+This is an example text file for add_integer module:
+Importing modules:
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> import sys
+
+Tests:
+
+Test 1:
+>>> add_integer(10, 10)
+20
+
+Test 2:
+>>> add_integer(-3, 3)
+0
+
+Test 3:
+>>> add_integer(6.5, 8.5)
+14
+
+Test 4:
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test 5:
+>>> add_integer(2)
+100
+
+Test 6:
+>>> add_integer(2, None)
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+Test 7:
+>>> add_integer("hell", 9)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+Test 8:
+>>> add_integer(9, "hell")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+Test 9:
+>>> add_integer(sys.maxsize, sys.maxsize)
+18446744073709551614
