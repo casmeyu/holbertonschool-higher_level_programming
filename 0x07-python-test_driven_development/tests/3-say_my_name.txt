@@ -1,0 +1,51 @@
+Testing for printing name and last name
+
+Import modules:
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Valid Tests
+Test 1:
+>>> say_my_name("Martin", "Casamayou")
+Martin Casamayou
+
+Test 2:
+>>> say_my_name("Walter")
+Walter
+
+Test 3:
+>>> say_my_name("    ", "as5d48w")
+     as5d48w
+
+Invalid Tests
+Test 4 (wrong last_name):
+>>> say_my_name("Carlos", 8)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+
+Test 5 (wrong first_name):
+>>> say_my_name(98, "Holberton")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+
+Test 6 (wrong last_name):
+>>> say_my_name("Carlos", None)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+
+Test 7 (wrong first_name):
+>>> say_my_name(None, "Rodriguez")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+Test 8 (no arguments):
+>>> say_my_name()
+Traceback (most recent call last):
+    ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
