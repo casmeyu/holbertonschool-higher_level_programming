@@ -16,6 +16,8 @@ def matrix_divided(matrix, div):
         line_len = len(matrix[0])
         for line in matrix:
             new_line = []
+            if (type(line) is not list):
+                raise TypeError(msg)
             if (len(line) != line_len):
                 msg = "Each row of the matrix must have the same size"
                 raise TypeError(msg)

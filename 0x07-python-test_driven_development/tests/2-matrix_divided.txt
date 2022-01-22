@@ -65,3 +65,10 @@ Test 11 (wrong div):
 Traceback (most recent call last):
     ...
 TypeError: div must be a number
+
+
+Test 12 (wrong matrix):
+>>> matrix_divided([[1, 2, 3], (1, 2, 3), "hhh"], 5)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
