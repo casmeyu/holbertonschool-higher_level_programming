@@ -1,0 +1,53 @@
+Test cases for the text_indentation module
+
+Import modules:
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Valid Tests
+Test1:
+>>> text_indentation("hey. listen")
+hey.
+<BLANKLINE>
+listen
+
+
+Test2:
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere?""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo?
+<BLANKLINE>
+Utrum igitur tibi litteram videor an totas paginas commovere?
+
+
+Test 3:
+>>> text_indentation("")
+
+
+Test 4:
+>>> text_indentation("?.?")
+?
+<BLANKLINE>
+.
+<BLANKLINE>
+?
+
+
+Test 5:
+>>> text_indentation("arguments: too many.")
+arguments:
+<BLANKLINE>
+too many.
+
+
+Test 6:
+>>> text_indentation("?")
+?
+
+
+Invalid Tests
+Test x(wrong type):
+>>> text_indentation(12)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
