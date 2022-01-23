@@ -33,6 +33,6 @@ def text_indentation(text):
     l_len = len(lines)
     for idx in range(l_len):
         if (idx == (len(lines) - 1)):
-            print(lines[idx])
+            print(lines[idx], end='')
         else:
             print("{}\n".format(lines[idx]))
