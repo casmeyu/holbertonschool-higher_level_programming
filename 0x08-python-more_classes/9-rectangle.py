@@ -18,6 +18,15 @@ class Rectangle():
         """Constructor for a rectangle
         Increments Rectangle counter instance by 1
         """
+        if (type(width) is not int):
+            raise TypeError("width must be an integer")
+        if (width < 0):
+            raise ValueError("width must be >= 0")
+        if (typeheight) is not int):
+            raise TypeError("height must be an integer")
+        if (height < 0):
+            raise ValueError("height must be >= 0")
+
         self.height = height
         self.width = width
         Rectangle.number_of_instances += 1
@@ -88,7 +97,7 @@ class Rectangle():
     # Class Methods
     @classmethod
     def square(cls, size=0):
-        return cls(size, size)
+        return(cls(size, size))
 
     # Built-in methods override
     def __str__(self):
