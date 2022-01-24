@@ -66,10 +66,12 @@ class Rectangle():
     def __str__(self):
         res = ""
         if (self.height == 0):
-            print()
+            pass
         else:
-            for c_idx in range(self.height):
-                res += (str(self.print_symbol) * self.width + "\n")
+            for c_idx in range(self.height - 1):
+                res += ("#"*self.width + "\n")
+            res += ("#"*self.width)
+
         return(res)
 
     def __repr__(self):
