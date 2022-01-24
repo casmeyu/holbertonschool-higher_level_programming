@@ -57,7 +57,7 @@ class Rectangle():
 
     def __str__(self):
         res = ""
-        if (self.height == 0):
+        if (self.width == 0 or self.height):
             pass
         else:
             for c_idx in range(self.height - 1):
@@ -67,5 +67,5 @@ class Rectangle():
         return(res)
 
     def __repr__(self):
-        res = "{}({:d},{:d})".format(type(self).__name__, self.width, self.height)
+        res = "{}({},{})".format(type(self).__name__, self.width, self.height)
         return(res)
