@@ -57,7 +57,7 @@ class Rectangle():
 
     def __str__(self):
         res = ""
-        if (self.width == 0 or self.height):
+        if (self.width == 0 or self.height == 0):
             pass
         else:
             for c_idx in range(self.height - 1):
