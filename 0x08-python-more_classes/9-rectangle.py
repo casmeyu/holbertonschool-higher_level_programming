@@ -88,7 +88,7 @@ class Rectangle():
     # Class Methods
     @classmethod
     def square(cls, size=0):
-        return(Rectangle(size, size))
+        return(cls(size, size))
 
     # Built-in methods override
     def __str__(self):
