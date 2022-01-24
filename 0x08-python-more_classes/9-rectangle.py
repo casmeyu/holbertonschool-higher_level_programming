@@ -93,7 +93,7 @@ class Rectangle():
     # Built-in methods override
     def __str__(self):
         res = ""
-        if (self.height == 0):
+        if (self.height == 0 or self.width == 0):
             pass
         else:
             for c_idx in range(self.height - 1):
