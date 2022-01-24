@@ -13,3 +13,18 @@ my_rectangle.width = 10
 my_rectangle.height = 3
 print(my_rectangle)
 print(repr(my_rectangle))
+
+my_rectangle.width = 1
+my_rectangle.height = 3
+print(my_rectangle)
+print(repr(my_rectangle))
+
+my_rectangle.width = 0
+my_rectangle.height = 0
+print(my_rectangle)
+print(repr(my_rectangle))
+
+my_rectangle.width = 1
+my_rectangle.height = 1
+print(my_rectangle)
+print(repr(my_rectangle))
