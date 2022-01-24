@@ -69,8 +69,8 @@ class Rectangle():
             pass
         else:
             for c_idx in range(self.height - 1):
-                res += ("#"*self.width + "\n")
-            res += ("#"*self.width)
+                res += (str(self.print_symbol)*self.width + "\n")
+            res += (str(self.print_symbol)*self.width)
 
         return(res)
 
