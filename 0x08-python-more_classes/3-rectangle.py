@@ -60,6 +60,8 @@ class Rectangle():
         if (self.height == 0):
             print()
         else:
-            for c_idx in range(self.height):
+            for c_idx in range(self.height - 1):
                 res += ("#"*self.width + "\n")
+            res += ("#"*self.width)
+
         return(res)
