@@ -88,7 +88,7 @@ class Rectangle():
     # Class Methods
     @classmethod
     def square(cls, size=0):
-        return(cls(size, size))
+        return cls(size, size)
 
     # Built-in methods override
     def __str__(self):
@@ -97,8 +97,8 @@ class Rectangle():
             pass
         else:
             for c_idx in range(self.height - 1):
-                res += ("#"*self.width + "\n")
-            res += ("#"*self.width)
+                res += (str(self.print_symbol)*self.width + "\n")
+            res += (str(self.print_symbol)*self.width)
 
         return(res)
 
