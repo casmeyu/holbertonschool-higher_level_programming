@@ -2,6 +2,9 @@
 """This is the rectangle module"""
 
 
-def Rectangle():
-    """Rectangle class"""
+class Rectangle():
+    """
+    Rectangle class
+    a simple rectangle made out of hash
+    """
     pass
