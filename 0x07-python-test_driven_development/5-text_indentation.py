@@ -20,7 +20,7 @@ def text_indentation(text):
         if (char in delimiters):
             line += char
             line = line.strip()
-            lines.append(line)
+            lines.append(line + "\n\n")
             line = ""
         else:
             line += char
@@ -32,7 +32,4 @@ def text_indentation(text):
 
     l_len = len(lines)
     for idx in range(l_len):
-        if (idx == (len(lines) - 1)):
-            print(lines[idx], end='')
-        else:
-            print("{}\n".format(lines[idx]))
+        print("{}".format(lines[idx]), end='')
