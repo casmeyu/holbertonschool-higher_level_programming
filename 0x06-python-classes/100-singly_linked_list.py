@@ -11,27 +11,39 @@ class SinglyLinkedList():
 
     def sorted_insert(self, value):
         """Inserts a new node in the list (sorted)"""
-        print("head: {}".format(self.__head))
-        if (self.__head == None):
-            new_node = Node(value)
+        new_node = Node(value)
+        # Special case for the empty linked list
+        if self.__head is None:
+            new_node.next = self.__head
             self.__head = new_node
+
+        # Special case for head at end
+        elif self.__head.data >= new_node.data:
+            new_node.next = self.__head
+            self.__head = new_node
+
         else:
-            tmp = self.__head
-            while (tmp.next_node):
-                tmp = tmp.next_node
 
-            new_node = Node(value)
-            tmp.next_node = new_node
+            # Locate the node before the point of insertion
+            current = self.__head
+            while(current.next is not None and current.next.data < new_node.data):
+                current = current.next
 
-        
+            new_node.next = current.next
+            current.next = new_node
+        print("added node: {} -> {}".format(new_node, new_node.next))
 
     def __str__(self):
         res = ""
         tmp = self.__head
+        print("head: {} -> {}".format(self.__head, self.__head.next_node))
         while (tmp):
             res += "{}\n".format(tmp)
+            print("str")
+            print(tmp)
             tmp = tmp.next_node
         return(res)
+
 
 class Node():
     """A node from a singly linked list of integers
@@ -54,7 +66,6 @@ class Node():
         self.check_values(data, Node)
         self.__data = data
         self.__next_node = next_node
-        print("next_node: {}".format(self.__next_node))
 
     @property
     def data(self):
