@@ -5,6 +5,11 @@ divides every item of a matrix by the div argument
 
 
 def matrix_divided(matrix, div):
+    """divides items from a matrix by div
+    Attributes:
+        matrix ([[]]): matrix to divide
+        div (int): divisor
+    """
     msg = "matrix must be a matrix (list of lists) of integers/floats"
     new_matrix = []
     if (type(div) is not int and type(div) is not float):

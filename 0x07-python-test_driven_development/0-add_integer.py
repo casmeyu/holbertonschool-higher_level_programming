@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-"""Add integer for testing
->>> add_integer(2, 2)
-4
+"""
+Add integer for testing
 """
 def add_integer(a, b=98):
+    """adds a and b
+    Attributes:
+        a (int)
+        b (int)
+    """
     if (type(a) is not int):
         if (type(a) is not float):
             raise TypeError("a must be an integer")
