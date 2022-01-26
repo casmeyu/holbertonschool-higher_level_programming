@@ -2,6 +2,7 @@
 from numpy import matmul
 """Lazy matrix multiplication using numpy library"""
 
+
 def lazy_matrix_mul(m_a, m_b):
     """lazy multiplication
     Arguments:
