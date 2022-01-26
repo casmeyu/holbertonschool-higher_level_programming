@@ -8,9 +8,11 @@ class TestMaxInteger(unittest.TestCase):
         #Valid test
         self.assertAlmostEqual(max_integer([1, 2, 3]), 3)
         self.assertAlmostEqual(max_integer([-1, -2, -3]), -1)
+        self.assertAlmostEqual(max_integer([1, 4, 2]), 4)
         self.assertAlmostEqual(max_integer([0, 0, 0]), 0)
         self.assertAlmostEqual(max_integer([-1, 0, 3]), 3)
         self.assertAlmostEqual(max_integer([0]), 0)
+        self.assertAlmostEqual(max_integer([]), None)
 
     def test_max_float(self):
         self.assertAlmostEqual(max_integer([0.0, 1.1, 2.2]), 2.2)
