@@ -46,8 +46,14 @@ Test 6:
 <BLANKLINE>
 
 Invalid Tests
-Test x(wrong type):
+Test 6(wrong type):
 >>> text_indentation(12)
 Traceback (most recent call last):
     ...
 TypeError: text must be a string
+
+Test 8(missing 1 argument):
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
