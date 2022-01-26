@@ -45,3 +45,9 @@ test 9 (missing argument):
 Traceback (most recent call last):
     ...
 TypeError: print_square() missing 1 required positional argument: 'size'
+
+test 10 (size < 0):
+>>> print_square(-5)
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
