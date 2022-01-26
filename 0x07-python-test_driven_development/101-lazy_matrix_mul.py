@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from numpy import matmul
 """Lazy matrix multiplication using numpy library"""
+from nupy import matmul
 
 
 def lazy_matrix_mul(m_a, m_b):
