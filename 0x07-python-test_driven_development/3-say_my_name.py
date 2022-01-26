@@ -20,5 +20,4 @@ def say_my_name(first_name, last_name=""):
     msg += f"My name is {first_name}"
     if (len(last_name) > 0):
         msg += f" {last_name}"
-
     print(msg)
