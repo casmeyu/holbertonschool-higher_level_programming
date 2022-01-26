@@ -17,8 +17,8 @@ def say_my_name(first_name, last_name=""):
     if (type(last_name) is not str):
         raise TypeError("last_name must be a string")
 
-    msg += first_name
+    msg += f"My name is {first_name}"
     if (len(last_name) > 0):
-        msg += " {}".format(last_name)
+        msg += f" {last_name}"
 
     print(msg)

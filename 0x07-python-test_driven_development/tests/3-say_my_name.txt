@@ -6,15 +6,15 @@ Import modules:
 Valid Tests
 Test 1:
 >>> say_my_name("Martin", "Casamayou")
-Martin Casamayou
+My name is Martin Casamayou
 
 Test 2:
 >>> say_my_name("Walter")
-Walter
+My name is Walter
 
 Test 3:
 >>> say_my_name("    ", "as5d48w")
-     as5d48w
+My name is      as5d48w
 
 Invalid Tests
 Test 4 (wrong last_name):
