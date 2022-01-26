@@ -17,10 +17,6 @@ Test 2:
 #
 
 
-Test 3:
->>> print_square(maxsize)
-lets see what happens here...
-
 Invalid Tests
 Test 4 (wrong size):
 >>> print_square("im a big square")
@@ -43,6 +39,4 @@ TypeError: size must be an integer
 
 Test 6 (wrong size):
 >>> print_square(0)
-Traceback (most recent call last):
-    ...
-ValueError: size must be >= 0
+<BLANKLINE>

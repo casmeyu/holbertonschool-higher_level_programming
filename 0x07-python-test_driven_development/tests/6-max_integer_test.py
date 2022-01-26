@@ -10,7 +10,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertAlmostEqual(max_integer([-1, -2, -3]), -1)
         self.assertAlmostEqual(max_integer([0, 0, 0]), 0)
         self.assertAlmostEqual(max_integer([-1, 0, 3]), 3)
-        self.assertAlmostEqual(max_integer([0], 0))
+        self.assertAlmostEqual(max_integer([0]), 0)
 
     def test_max_float(self):
         self.assertAlmostEqual(max_integer([0.0, 1.1, 2.2]), 2.2)

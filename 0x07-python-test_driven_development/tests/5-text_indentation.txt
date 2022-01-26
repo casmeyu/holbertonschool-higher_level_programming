@@ -18,7 +18,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Quonam modo?
 <BLANKLINE>
 Utrum igitur tibi litteram videor an totas paginas commovere?
-
+<BLANKLINE>
 
 Test 3:
 >>> text_indentation("")
@@ -31,19 +31,19 @@ Test 4:
 .
 <BLANKLINE>
 ?
-
+<BLANKLINE>
 
 Test 5:
 >>> text_indentation("arguments: too many.")
 arguments:
 <BLANKLINE>
 too many.
-
+<BLANKLINE>
 
 Test 6:
 >>> text_indentation("?")
 ?
-
+<BLANKLINE>
 
 Invalid Tests
 Test x(wrong type):
