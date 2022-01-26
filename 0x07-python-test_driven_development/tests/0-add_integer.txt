@@ -53,3 +53,15 @@ TypeError: b must be an integer
 Test 9:
 >>> add_integer(sys.maxsize, sys.maxsize)
 18446744073709551614
+
+Test 10 (Float overflow):
+>>> add_integer(float("inf"), float("inf"))
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+Test 11 (NaN):
+>>> add_integer(float("NaN"), float("NaN"))
+Traceback (most recent call last):
+   ...
+ValueError: cannot convert float NaN to integer
