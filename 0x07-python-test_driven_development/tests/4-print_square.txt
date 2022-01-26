@@ -37,6 +37,6 @@ Traceback (most recent call last):
    ...
 TypeError: size must be an integer
 
-Test 6 (wrong size):
+Test 6 (0 size):
 >>> print_square(0)
-
+<BLANKLINE>
