@@ -72,3 +72,22 @@ Test 12 (wrong matrix):
 Traceback (most recent call last):
     ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Test 13 (missing one argument):
+>>> matrix_divided([[1, 2, 3], [3, 4, 5]])
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+
+Test 14 (no arguments):
+>>> matrix_divided()
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+
+Test 15 (fivide by inf):
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], float("inf"))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
