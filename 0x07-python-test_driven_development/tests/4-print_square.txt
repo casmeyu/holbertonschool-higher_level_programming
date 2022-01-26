@@ -39,4 +39,3 @@ TypeError: size must be an integer
 
 Test 6 (0 size):
 >>> print_square(0)
-<BLANKLINE>
