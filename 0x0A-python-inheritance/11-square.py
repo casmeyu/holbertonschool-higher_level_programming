@@ -4,6 +4,10 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
+    """Square class
+        Attributes:
+            size (int)
+    """
     def __init__(self, size):
         """Initializes the square with a positive size"""
         Rectangle.integer_validator(self, 'size', size)
