@@ -3,6 +3,10 @@
 
 
 class MyInt(int):
+    """MyInt class
+        Attributes:
+            obj (object)
+    """
     def __eq__(self, obj):
         if self is not obj:
             return False
