@@ -1,4 +1,4 @@
-#!/usb/bin/python3
+#!/usr/bin/python3
 """Lookupmodule
 prints information about objects
 """
