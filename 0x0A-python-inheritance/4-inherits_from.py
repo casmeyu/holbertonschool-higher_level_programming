@@ -1,4 +1,4 @@
-#!/usr/bin/include
+#!/usr/bin/python3
 """Module to check if an object inherits from a class"""
 
 
