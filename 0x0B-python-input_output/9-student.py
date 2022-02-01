@@ -17,4 +17,5 @@ class Student():
         print(self)
 
     def to_json(self, attrs=None):
+        """Returns the dictionary of attributes of self"""
         return (self.__dict__)
