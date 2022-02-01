@@ -23,12 +23,12 @@ class Student():
     def to_json(self, attrs=None):
         """Returns the dictionary of attributes of self"""
         res = {}
-        if not attrs:
-            return (self.__dict__)
-        else:
-            for key in self.__dict__:
-                if (type(key) is not str):
-                    return (self.__dict__)
-                if key in attrs:
+        if type(attrs) is list:
+            for key in attrs:
+                if type(key) is not str:
+                    return self.__dict__
+                if key in self.__dict__:
                     res[key] = self.__dict__[key]
             return (res)
+        else:
+            return (self.__dict__)
