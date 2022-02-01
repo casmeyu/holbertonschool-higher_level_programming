@@ -19,7 +19,6 @@ class Student():
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-        print(self)
 
     def to_json(self, attrs=None):
         """Returns the dictionary of attributes of self"""
