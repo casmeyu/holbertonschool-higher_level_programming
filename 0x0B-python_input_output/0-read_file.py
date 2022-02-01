@@ -2,11 +2,11 @@
 """Module for reading a file"""
 
 
-def read_file(file_name=''):
+def read_file(filename=''):
     """This function opens a file and prints its content
         Arguments:
             file_name (str): file to read
     """
-    with open(file_name) as f:
+    with open(filename) as f:
         for line in f:
             print(line, end='')
