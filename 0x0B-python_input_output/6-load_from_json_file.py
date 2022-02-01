@@ -9,5 +9,4 @@ def load_from_json_file(filename):
             filename (str): path of the file to read
     """
     with open(filename) as f:
-        for line in f:
-            return (json.loads(line))
+        return (json.load(f))
