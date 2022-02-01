@@ -27,6 +27,8 @@ class Student():
             return (self.__dict__)
         else:
             for key in self.__dict__:
+                if (type(key) is not str):
+                    return (self.__dict__)
                 if key in attrs:
                     res[key] = self.__dict__[key]
             return (res)
