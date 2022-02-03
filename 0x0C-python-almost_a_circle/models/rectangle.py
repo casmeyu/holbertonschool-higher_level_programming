@@ -89,6 +89,8 @@ class Rectangle(Base):
         return (self.__height * self.__width)
 
     def display(self):
-        """Displays the rectangle on the console"""
+        """Displays the rectangle on the console based (x, y) position"""
+        print("\n"*self.y, end='')
         for line in range(self.__height):
+            print(" "*self.x, end='')
             print('#'*self.__width)
