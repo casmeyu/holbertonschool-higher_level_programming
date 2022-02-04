@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """This module is for the first Base Class Model"""
+import json
 
 
 class Base():
@@ -11,6 +12,53 @@ class Base():
     """
     __nb_objects = 0
 
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Returns a json representation of a list of dictionaries"""
+        return (json.dumps(list_dictionaries))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the Json representation of json_string"""
+        if type(json_string) is not str:
+            raise TypeError("json_string must be a string")
+        if json_string is None:
+            return ([])
+        return json.loads(json_string)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Writes Json representation to a file"""
+        with open(f"{cls.__name__}.json", 'w+') as f:
+            obj_list = []
+            if list_objs is None:
+                f.write(obj_list)
+            else:
+                for item in list_objs:
+                    obj_list.append(cls.to_dictionary(item))
+                f.write(cls.to_json_string(obj_list))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance of cls with attributes already set
+            Arguements:
+                cls (Class Object): class to create
+                dictionary (dict): dictionary of attributes
+        """        
+        if cls.__name__ == 'Rectangle':
+            print('creating a rectangle')
+            dummy = cls(1, 1, 1, 1, 1)
+            print(dummy)
+        elif cls.__name__ == 'Square':
+            print('creating suqre')
+            dummy = cls(1, 1, 1, 1)
+            print(dummy)
+
+        dummy.update(None, dictionary)
+        print(dummy)
+        return dummy
+
+    # Built in Functions
     def __init__(self, id=None):
         """Initialization of Base Object
             Arguments:

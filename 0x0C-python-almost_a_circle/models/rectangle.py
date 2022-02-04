@@ -98,7 +98,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Updates the arguments based on the args given"""
         atr_list = ['id', 'width', 'height', 'x', 'y']
-        if args:
+        if args is not None:
             if len(args) < 6 and len(args) > 0:
                 for i in range(len(args)):
                     setattr(self, atr_list[i], args[i])
@@ -107,3 +107,14 @@ class Rectangle(Base):
         for key in kwargs:
             if key in atr_list:
                 setattr(self, key, kwargs[key])
+    def to_dictionary(self):
+        """Returns the dictionary representation of Rectangle"""
+        res = {
+                'x': self.x,
+                'y': self.y,
+                'id': self.id,
+                'height': self.height,
+                'width': self.width
+                }
+        return res
+
