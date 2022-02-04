@@ -94,3 +94,13 @@ class Rectangle(Base):
         for line in range(self.__height):
             print(" "*self.x, end='')
             print('#'*self.__width)
+
+    def update(self, *args):
+        """Updates the arguments based on the args given"""
+        atr_list = ['id', 'width', 'height', 'x', 'y']
+        if not args:
+            return
+        if len(args) > 5:
+            return
+        for i in range(len(args)):
+            setattr(self, atr_list[i], args[i])
