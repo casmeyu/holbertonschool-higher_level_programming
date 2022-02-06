@@ -12,6 +12,8 @@ class Base():
     """
     __nb_objects = 0
 
+    # Static methods
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns a json representation of a list of dictionaries"""
@@ -26,6 +28,8 @@ class Base():
             return ([])
         return json.loads(json_string)
 
+    # Class methods
+
     @classmethod
     def save_to_file(cls, list_objs):
         """Writes Json representation to a file"""
@@ -39,23 +43,33 @@ class Base():
                 f.write(cls.to_json_string(obj_list))
 
     @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances of class based on a file"""
+        list_of_instances = []
+        with open(f"{cls.__name__}.json", 'r') as f:
+            for line in f:
+                try:
+                    ins = cls.from_json_string(line)
+                    for item in ins:
+                        list_of_instances.append(cls.create(**item))
+                except Exception as e:
+                    print(f"entered exception\n{e}")
+
+        return list_of_instances
+
+    @classmethod
     def create(cls, **dictionary):
         """Returns an instance of cls with attributes already set
             Arguements:
                 cls (Class Object): class to create
                 dictionary (dict): dictionary of attributes
-        """        
+        """
         if cls.__name__ == 'Rectangle':
-            print('creating a rectangle')
-            dummy = cls(1, 1, 1, 1, 1)
-            print(dummy)
+            dummy = cls(1, 1)
         elif cls.__name__ == 'Square':
-            print('creating suqre')
-            dummy = cls(1, 1, 1, 1)
-            print(dummy)
+            dummy = cls(1)
 
-        dummy.update(None, dictionary)
-        print(dummy)
+        dummy.update(**dictionary)
         return dummy
 
     # Built in Functions
