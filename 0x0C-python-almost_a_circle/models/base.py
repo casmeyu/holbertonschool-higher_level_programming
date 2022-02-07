@@ -38,7 +38,7 @@ class Base():
         with open(f"{cls.__name__}.json", 'w+') as f:
             obj_list = []
             if list_objs is None:
-                f.write(obj_list)
+                f.write(cls.to_json_string(obj_list))
             else:
                 for item in list_objs:
                     obj_list.append(cls.to_dictionary(item))
