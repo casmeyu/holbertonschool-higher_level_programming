@@ -51,13 +51,9 @@ class Base():
         try:
             with open(f"{cls.__name__}.json", 'r') as f:
                 for line in f:
-                    try:
-                        ins = cls.from_json_string(line)
-                        for item in ins:
-                            list_of_instances.append(cls.create(**item))
-                    except Exception as e:
-                        print(f"{e}")
-                        return ([])
+                    ins = cls.from_json_string(line)
+                    for item in ins:
+                        list_of_instances.append(cls.create(**item))
         except Exception as e:
             print(f"{e}")
             return list_of_instances
