@@ -48,15 +48,17 @@ class Base():
     def load_from_file(cls):
         """Returns a list of instances of class based on a file"""
         list_of_instances = []
-        with open(f"{cls.__name__}.json", 'r') as f:
-            for line in f:
-                try:
-                    ins = cls.from_json_string(line)
-                    for item in ins:
-                        list_of_instances.append(cls.create(**item))
-                except Exception as e:
-                    print(f"entered exception\n{e}")
-
+        try:
+            with open(f"{cls.__name__}.json", 'r') as f:
+                for line in f:
+                    try:
+                        ins = cls.from_json_string(line)
+                        for item in ins:
+                            list_of_instances.append(cls.create(**item))
+                    except Exception as e:
+                        print(f"entered exception\n{e}")
+        except Exception as e:
+            print(f"{e}")
         return list_of_instances
 
     @classmethod
