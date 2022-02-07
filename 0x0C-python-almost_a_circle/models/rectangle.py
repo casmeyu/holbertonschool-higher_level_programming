@@ -107,6 +107,7 @@ class Rectangle(Base):
         for key in kwargs:
             if key in atr_list:
                 setattr(self, key, kwargs[key])
+
     def to_dictionary(self):
         """Returns the dictionary representation of Rectangle"""
         res = {
@@ -117,4 +118,3 @@ class Rectangle(Base):
                 'width': self.width
                 }
         return res
-
