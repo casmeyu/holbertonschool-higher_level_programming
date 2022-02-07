@@ -24,10 +24,10 @@ class Base():
     @staticmethod
     def from_json_string(json_string):
         """Returns the Json representation of json_string"""
-        if type(json_string) is not str:
-            raise TypeError("json_string must be a string")
         if json_string is None:
             return ([])
+        if type(json_string) is not str:
+            raise TypeError("json_string must be a string")
         return json.loads(json_string)
 
     # Class methods
