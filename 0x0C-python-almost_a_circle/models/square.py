@@ -42,7 +42,9 @@ class Square(Rectangle):
                 'y': self.y
                 }
         return res
+
     # Built in functions
+
     def __init__(self, size, x=0, y=0, id=None):
         """Initialization of Square
             Arguemnts:
