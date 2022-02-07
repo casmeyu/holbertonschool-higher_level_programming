@@ -57,7 +57,7 @@ class Base():
                             list_of_instances.append(cls.create(**item))
                     except Exception as e:
                         print(f"{e}")
-                        return list_of_instances
+                        return ([])
         except Exception as e:
             print(f"{e}")
             return list_of_instances
