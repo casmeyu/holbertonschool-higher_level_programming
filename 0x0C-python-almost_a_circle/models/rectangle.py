@@ -79,7 +79,7 @@ class Rectangle(Base):
 
     # Built in functions
     def __str__(self):
-        txt = f"[Rectangle] ({self.id}) {self.x}/{self.y}"
+        txt = f"[Rectangle] ({self.id}) {self.x}/{self.y} -"
         txt += f" {self.width}/{self.height}"
         return (txt)
 
