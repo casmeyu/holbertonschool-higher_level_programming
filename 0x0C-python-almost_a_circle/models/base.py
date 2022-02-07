@@ -59,6 +59,8 @@ class Base():
                         print(f"entered exception\n{e}")
         except Exception as e:
             print(f"{e}")
+            return list_of_instances
+
         return list_of_instances
 
     @classmethod
