@@ -123,7 +123,7 @@ class Base():
             Arguments:
                 id: id for the object, if id is None then assign __nb_objects
         """
-        if (id):
+        if (id is not None):
             self.id = id
         else:
             Base.__nb_objects += 1
