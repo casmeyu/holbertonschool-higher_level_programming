@@ -79,7 +79,7 @@ class Base():
     def save_to_file_csv(cls, list_objs):
         """Writes a list of serialized objects to a file in csv format"""
 
-        with open(f"{cls.__name__}.cvs", 'w', newline='') as f:
+        with open(f"{cls.__name__}.csv", 'w', newline='') as f:
             writer = csv.writer(f)
 
             for o in list_objs:
@@ -90,7 +90,7 @@ class Base():
 
     @classmethod
     def load_from_file_csv(cls):
-        """Returns a list of instances based on a cvs file"""
+        """Returns a list of instances based on a csv file"""
         list_objs = []
 
         with open(f"{cls.__name__}.csv", 'r', newline='') as f:
