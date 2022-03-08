@@ -1,3 +1,4 @@
+-- 9. full creation
 -- Creates a table and inserts values into it
 CREATE TABLE IF NOT EXISTS second_table (
 	id INT,
