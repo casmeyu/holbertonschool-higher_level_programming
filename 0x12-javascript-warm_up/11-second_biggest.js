@@ -7,7 +7,7 @@ if (process.argv.length < 4) {
   max = parseInt(process.argv[2]);
   sMax = parseInt(process.argv[2]);
   for (let idx = 2; process.argv[idx]; idx++) {
-    if (parseInt(process.argv[idx]) > max) {
+    if (!isNaN(parseInt(process.argv[idx])) && parseInt(process.argv[idx]) > max) {
       if (idx > 1) {
         sMax = max;
       }
