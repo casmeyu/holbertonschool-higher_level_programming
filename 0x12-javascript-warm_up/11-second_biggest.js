@@ -1,18 +1,8 @@
 #!/usr/bin/node
-let max, sMax;
+const numbers = [];
 
-if (process.argv.length < 4) {
-  console.log(0);
-} else {
-  max = parseInt(process.argv[2]);
-  sMax = parseInt(process.argv[2]);
-  for (let idx = 2; process.argv[idx]; idx++) {
-    if (!isNaN(parseInt(process.argv[idx])) && parseInt(process.argv[idx]) > max) {
-      if (idx > 1) {
-        sMax = max;
-      }
-      max = parseInt(process.argv[idx]);
-    }
-  }
-  console.log(sMax);
+for (let i = 2; process.argv[i]; i++) {
+  numbers.push(parseInt(process.argv[i]));
 }
+numbers.sort((a, b) => { return (b - a); });
+console.log(numbers[1]);
