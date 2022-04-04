@@ -8,7 +8,9 @@ if (process.argv.length < 4) {
   sMax = parseInt(process.argv[2]);
   for (let idx = 2; process.argv[idx]; idx++) {
     if (parseInt(process.argv[idx]) > max) {
-      sMax = max;
+      if (idx > 1) {
+        sMax = max;
+      }
       max = parseInt(process.argv[idx]);
     }
   }
