@@ -11,7 +11,6 @@ try:
             db=argv[3]
             )
     cur = db.cursor()
-    print('did the connection')
 except Exception as ex:
     print(ex)
 

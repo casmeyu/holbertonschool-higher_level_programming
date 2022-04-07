@@ -16,9 +16,9 @@ except Exception as ex:
 
 try:
     query = f'''select * from states
-            where name like "{argv[4]}"'''
+            where name=%s'''
 
-    cur.execute(query)
+    cur.execute(query, (argv[4],))
     query_rows = cur.fetchall()
 
     for row in query_rows:
