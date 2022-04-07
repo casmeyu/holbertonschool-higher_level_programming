@@ -12,7 +12,12 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for instance in session.query(State).order_by(State.id):
-        print(f'{instance.id}: {instance.name}')
+    search = argv[4]
+    objs = session.query(State).filter(State.name == search).all()
+    if len(objs) > 0:
+        for obj in objs:
+            print(f'{obj.id}')
+    else:
+        print('Not found')
 
     session.close()

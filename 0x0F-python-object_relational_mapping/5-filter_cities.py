@@ -33,5 +33,8 @@ try:
         else:
             res += (row)
     print(res)
+
+    cur.close()
+    db.close()
 except Exception as ex:
     print(ex)

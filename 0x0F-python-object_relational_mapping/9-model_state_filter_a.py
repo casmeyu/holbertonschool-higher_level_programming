@@ -12,7 +12,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for instance in session.query(State).order_by(State.id):
-        print(f'{instance.id}: {instance.name}')
+    obs = session.query(State).order_by(State.id).filter(State.name.like('%a%'))
+    for obj in obs:
+        print(f'{obj.id}: {obj.name}')
 
     session.close()

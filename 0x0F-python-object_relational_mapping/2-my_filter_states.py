@@ -23,5 +23,8 @@ try:
 
     for row in query_rows:
         print(row)
+
+    cur.close()
+    db.close()
 except Exception as ex:
     print(ex)
