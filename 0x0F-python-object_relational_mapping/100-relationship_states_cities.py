@@ -9,7 +9,7 @@ from sys import argv
 
 if __name__ == '__main__':
     eng_creat = f'mysql+mysqldb://{argv[1]}:{argv[2]}@localhost/{argv[3]}'
-    engine = create_engine(eng_creat)
+    engine = create_engine(eng_creat, pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
 
