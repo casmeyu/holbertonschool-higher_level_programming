@@ -18,7 +18,8 @@ if __name__ == '__main__':
 
     try:
         query = '''select * from states
-                where name regexp "^N.*"'''
+                where name regexp "^N.*"
+                order by states.id asc'''
 
         cur.execute(query)
         query_rows = cur.fetchall()
