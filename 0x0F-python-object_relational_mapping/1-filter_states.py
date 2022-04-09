@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Module for getting all states that start with a given letter"""
 import MySQLdb
 from sys import argv
 
