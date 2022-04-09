@@ -15,14 +15,11 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     query = '''select * from states
-            where name regexp "^N.*"
+            where name like binary "N%"
             order by states.id asc'''
 
     cur.execute(query)
     query_rows = cur.fetchall()
-
-    if not query_rows:
-        print()
 
     for row in query_rows:
         print(row)
