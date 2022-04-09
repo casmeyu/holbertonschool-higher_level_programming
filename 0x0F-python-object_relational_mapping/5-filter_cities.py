@@ -32,16 +32,13 @@ if __name__ == '__main__':
 
         res = ''
         for idx in range(len(query_rows) - 1):
-            row = query_rows[idx]
-            row = str(row).strip("('")
-            row = row.strip("',)")
+            row = query_rows[idx][0]
             if idx != 0:
                 res += (', ' + row)
             else:
                 res += (row)
 
         print(res)
-
         cur.close()
         db.close()
     except Exception as ex:
