@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Updates the name of the state with id == 2"""
 from sqlalchemy import (create_engine, update)
 from sqlalchemy.orm import Session
