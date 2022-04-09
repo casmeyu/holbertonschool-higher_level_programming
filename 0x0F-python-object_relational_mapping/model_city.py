@@ -8,8 +8,9 @@ from model_state import Base, State
 
 Base = declarative_base()
 
-"""Class for cities model"""
+
 class City(Base):
+    """Class for cities model"""
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True)
     name = Column(String(256), nullable=False)
