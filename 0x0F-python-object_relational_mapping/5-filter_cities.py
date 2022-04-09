@@ -1,4 +1,4 @@
-#!/usr/binu/python3
+#!/usr/bin/python3
 """Filter all the cities from a state in a formatted String"""
 import MySQLdb
 from sys import argv
