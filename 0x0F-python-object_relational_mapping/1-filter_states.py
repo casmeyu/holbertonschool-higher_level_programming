@@ -21,6 +21,9 @@ if __name__ == '__main__':
     cur.execute(query)
     query_rows = cur.fetchall()
 
+    if not query_rows:
+        print()
+
     for row in query_rows:
         print(row)
 
