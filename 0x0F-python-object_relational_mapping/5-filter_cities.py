@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/binu/python3
 """Filter all the cities from a state in a formatted String"""
 import MySQLdb
 from sys import argv
@@ -37,7 +37,7 @@ if __name__ == '__main__':
                 res += (row)
         print(res)
 
-       cur.close()
+        cur.close()
         db.close()
     except Exception as ex:
         print(ex)
