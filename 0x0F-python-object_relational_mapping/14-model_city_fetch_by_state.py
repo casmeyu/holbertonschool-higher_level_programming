@@ -17,3 +17,5 @@ if __name__ == '__main__':
         data = s.query(State, City).filter(State.id == City.state_id).all()
         for state, city in data:
             print(f'{state.name}: ({city.id}) {city.name}')
+
+        s.close()
