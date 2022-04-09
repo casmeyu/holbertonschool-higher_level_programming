@@ -10,10 +10,10 @@ if __name__ == '__main__':
     eng_creation = f'mysql+mysqldb://{argv[1]}:{argv[2]}@localhost/{argv[3]}'
     engine = create_engine(eng_creation)
     Session = sessionmaker(bind=engine)
-    session = Session()
+    s = Session()
 
-    obs = session.query(State).order_by(State.id).filter(State.name.like('%a%'))
+    obs = s.query(State).order_by(State.id).filter(State.name.like('%a%'))
     for obj in obs:
         print(f'{obj.id}: {obj.name}')
 
-    session.close()
+    s.close()
