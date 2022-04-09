@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Module for selecting a state with a given name"""
 import MySQLdb
 from sys import argv
 
