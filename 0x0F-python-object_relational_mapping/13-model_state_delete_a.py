@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Deletes all entries with and a in the state name"""
 from sqlalchemy import (create_engine, delete)
 from sqlalchemy.orm import Session

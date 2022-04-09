@@ -2,7 +2,7 @@
 """Module fot fetch vity by state"""
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from model_state import Base, State
 from model_city import City
 from sys import argv
 
@@ -14,7 +14,7 @@ if __name__ == '__main__':
         Session = sessionmaker(bind=engine)
         s = Session()
 
-        data = s.query(State, City).filter(State.id == City.state_id).all()
+        data = s.query(State, City).filter(State.id == City.state_id).order_by(City.id).all()
         for state, city in data:
             print(f'{state.name}: ({city.id}) {city.name}')
 
