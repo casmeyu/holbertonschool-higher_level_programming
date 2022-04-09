@@ -11,7 +11,7 @@ if __name__ == '__main__':
     engine = create_engine(eng_creation)
     session = Session(engine)
 
-    new_state = State(nam='Arizona')
+    new_state = State(name='Louisiana')
 
     session.add(new_state)
     session.commit()
