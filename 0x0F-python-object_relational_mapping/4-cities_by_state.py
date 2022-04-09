@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""List all the cities and their state"""
 import MySQLdb
 from sys import argv
 

@@ -1,40 +1,43 @@
 #!/usr/bin/env python3
+"""Filter all the cities from a state in a formatted String"""
 import MySQLdb
 from sys import argv
 
-try:
-    db = MySQLdb.connect(
-            host='localhost',
-            port=3306,
-            user=argv[1],
-            passwd=argv[2],
-            db=argv[3]
-            )
-    cur = db.cursor()
-except Exception as ex:
-    print(ex)
 
-try:
-    query = f'''select c.name from states as s
-            left join cities as c
-            on c.state_id = s.id
-            where s.name = %s'''
+if __name__ == '__main__':
+    try:
+        db = MySQLdb.connect(
+                host='localhost',
+                port=3306,
+                user=argv[1],
+                passwd=argv[2],
+                db=argv[3]
+                )
+        cur = db.cursor()
+    except Exception as ex:
+        print(ex)
 
-    cur.execute(query, (argv[4],))
-    query_rows = cur.fetchall()
+    try:
+        query = f'''select c.name from states as s
+                left join cities as c
+                on c.state_id = s.id
+                where s.name = %s'''
 
-    res = ''
-    for idx in range(len(query_rows) - 1):
-        row = query_rows[idx]
-        row = str(row).strip("('")
-        row = row.strip("',)")
-        if idx != 0:
-            res += (', ' + row)
-        else:
-            res += (row)
-    print(res)
+        cur.execute(query, (argv[4],))
+        query_rows = cur.fetchall()
 
-    cur.close()
-    db.close()
-except Exception as ex:
-    print(ex)
+        res = ''
+        for idx in range(len(query_rows) - 1):
+            row = query_rows[idx]
+            row = str(row).strip("('")
+            row = row.strip("',)")
+            if idx != 0:
+                res += (', ' + row)
+            else:
+                res += (row)
+        print(res)
+
+       cur.close()
+        db.close()
+    except Exception as ex:
+        print(ex)

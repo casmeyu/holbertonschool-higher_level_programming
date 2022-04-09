@@ -1,30 +1,33 @@
 #!/usr/bin/env python3
+"""Trying to stop simple sqlInjections"""
 import MySQLdb
 from sys import argv
 
-try:
-    db = MySQLdb.connect(
-            host='localhost',
-            port=3306,
-            user=argv[1],
-            passwd=argv[2],
-            db=argv[3]
-            )
-    cur = db.cursor()
-except Exception as ex:
-    print(ex)
 
-try:
-    query = f'''select * from states
-            where name=%s'''
+if __name__ == '__main__':
+    try:
+        db = MySQLdb.connect(
+                host='localhost',
+                port=3306,
+                user=argv[1],
+                passwd=argv[2],
+                db=argv[3]
+                )
+        cur = db.cursor()
+    except Exception as ex:
+        print(ex)
 
-    cur.execute(query, (argv[4],))
-    query_rows = cur.fetchall()
+    try:
+        query = f'''select * from states
+                where name=%s'''
 
-    for row in query_rows:
-        print(row)
+        cur.execute(query, (argv[4],))
+        query_rows = cur.fetchall()
 
-    cur.close()
-    db.close()
-except Exception as ex:
-    print(ex)
+        for row in query_rows:
+            print(row)
+
+        cur.close()
+        db.close()
+    except Exception as ex:
+        print(ex)
