@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for city model ORM using SQLAlchemy 
+"""Module for city model ORM using SQLAlchemy
 """
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
