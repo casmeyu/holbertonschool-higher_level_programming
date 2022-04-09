@@ -26,6 +26,10 @@ if __name__ == '__main__':
         cur.execute(query, (argv[4],))
         query_rows = cur.fetchall()
 
+        if not query_rows:
+            print()
+            exit()
+
         res = ''
         for idx in range(len(query_rows) - 1):
             row = query_rows[idx]
@@ -35,6 +39,7 @@ if __name__ == '__main__':
                 res += (', ' + row)
             else:
                 res += (row)
+
         print(res)
 
         cur.close()
