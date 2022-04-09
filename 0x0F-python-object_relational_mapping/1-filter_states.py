@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     try:
         query = '''select * from states
-                where name like "N%"'''
+                where name regexp "^N.*"'''
 
         cur.execute(query)
         query_rows = cur.fetchall()
