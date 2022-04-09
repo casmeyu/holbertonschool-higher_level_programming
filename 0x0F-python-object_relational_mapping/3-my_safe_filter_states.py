@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Trying to stop simple sqlInjections"""
 import MySQLdb
 from sys import argv
