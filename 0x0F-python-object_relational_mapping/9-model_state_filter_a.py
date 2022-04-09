@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Module for printing all the states"""
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
