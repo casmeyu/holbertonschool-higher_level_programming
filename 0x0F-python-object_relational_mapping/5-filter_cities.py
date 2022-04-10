@@ -15,7 +15,7 @@ if __name__ == '__main__':
                 )
         cur = db.cursor()
     except Exception as ex:
-        print(ex)
+        raise(ex)
 
 # another try
 
@@ -29,20 +29,20 @@ if __name__ == '__main__':
             cur.execute(query, (argv[4],))
             query_rows = cur.fetchall()
 
-            if not query_rows:
+            if len(query_rows) == 0:
                 print()
-                exit()
+            else:
+                res = ''
+                for idx in range(len(query_rows) - 1):
+                    row = query_rows[idx][0]
+                    if idx != 0:
+                        res += (', ' + row)
+                    else:
+                        res += (row)
 
-            res = ''
-            for idx in range(len(query_rows) - 1):
-                row = query_rows[idx][0]
-                if idx != 0:
-                    res += (', ' + row)
-                else:
-                    res += (row)
+                print(res)
 
-            print(res)
             cur.close()
             db.close()
     except Exception as ex:
-        print(ex)
+        raise(ex)
