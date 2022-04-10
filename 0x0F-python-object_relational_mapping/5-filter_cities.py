@@ -17,29 +17,32 @@ if __name__ == '__main__':
     except Exception as ex:
         print(ex)
 
+# another try
+
     try:
-        query = f'''select c.name from states as s
-                left join cities as c
-                on c.state_id = s.id
-                where s.name = %s'''
+        if len(argv) == 5:
+            query = f'''select c.name from states as s
+                    left join cities as c
+                    on c.state_id = s.id
+                    where s.name like binary %s'''
 
-        cur.execute(query, (argv[4],))
-        query_rows = cur.fetchall()
+            cur.execute(query, (argv[4],))
+            query_rows = cur.fetchall()
 
-        if not query_rows:
-            print()
-            exit()
+            if not query_rows:
+                print()
+                exit()
 
-        res = ''
-        for idx in range(len(query_rows) - 1):
-            row = query_rows[idx][0]
-            if idx != 0:
-                res += (', ' + row)
-            else:
-                res += (row)
+            res = ''
+            for idx in range(len(query_rows) - 1):
+                row = query_rows[idx][0]
+                if idx != 0:
+                    res += (', ' + row)
+                else:
+                    res += (row)
 
-        print(res)
-        cur.close()
-        db.close()
+            print(res)
+            cur.close()
+            db.close()
     except Exception as ex:
         print(ex)
