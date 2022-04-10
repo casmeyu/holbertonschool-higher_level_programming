@@ -3,6 +3,37 @@
 import MySQLdb
 from sys import argv
 
+import MySQLdb
+from sys import argv
+
+# j code
+
+if __name__ == "__main__":
+    if (len(argv) > 3):
+        db = MySQLdb.connect(host='localhost', user=argv[1],
+                             passwd=argv[2], db=argv[3])
+        cur = db.cursor()
+        cmd = "SELECT cities.name FROM cities INNER JOIN states ON \
+cities.state_id = states.id WHERE states.name LIKE BINARY %s"
+        cur.execute(cmd, (argv[4], ))
+        rows = cur.fetchall()
+        if (len(rows) != 0):
+            res = ''
+            for idx in range(len(rows)):
+                if idx != 0:
+                    res += f', {rows[idx][0]}'
+                else:
+                    res += rows[idx][0]
+
+            print(res)
+        else:
+            print()
+
+        cur.close()
+        db.close()
+
+"""
+my code
 
 if __name__ == '__main__':
     db = MySQLdb.connect(
@@ -38,3 +69,4 @@ if __name__ == '__main__':
 
         cur.close()
         db.close()
+"""
