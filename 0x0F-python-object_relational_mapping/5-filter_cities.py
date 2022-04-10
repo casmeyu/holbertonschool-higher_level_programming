@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     if len(argv) == 5:
         query = f'''select c.name from states as s
-                left join cities as c
+                inner join cities as c
                 on c.state_id = s.id
                 where s.name like binary %s'''
 
