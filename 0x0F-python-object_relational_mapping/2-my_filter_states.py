@@ -17,10 +17,12 @@ if __name__ == '__main__':
         )
     cur = db.cursor()
 
-    cur.execute(f'select * from states\
-            where name like binary "{argv[4]}"\
-            order by states.id asc')
+    query = '\
+select * from states \
+where name like binary "{}" \
+order by states.id asc'.format(argv[4])
 
+    cur.execute(query)
     query_rows = cur.fetchall()
 
     for row in query_rows:
