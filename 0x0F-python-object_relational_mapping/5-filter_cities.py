@@ -5,44 +5,36 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    try:
-        db = MySQLdb.connect(
-                host='localhost',
-                port=3306,
-                user=argv[1],
-                passwd=argv[2],
-                db=argv[3]
-                )
-        cur = db.cursor()
-    except Exception as ex:
-        raise(ex)
+    db = MySQLdb.connect(
+            host='localhost',
+            port=3306,
+            user=argv[1],
+            passwd=argv[2],
+            db=argv[3]
+            )
+    cur = db.cursor()
 
-# another try
+    if len(argv) == 5:
+        query = f'''select c.name from states as s
+                left join cities as c
+                on c.state_id = s.id
+                where s.name like binary %s'''
 
-    try:
-        if len(argv) == 5:
-            query = f'''select c.name from states as s
-                    left join cities as c
-                    on c.state_id = s.id
-                    where s.name like binary %s'''
+        cur.execute(query, (argv[4],))
+        query_rows = cur.fetchall()
 
-            cur.execute(query, (argv[4],))
-            query_rows = cur.fetchall()
+        if len(query_rows) == 0:
+            print()
+        else:
+            res = ''
+            for idx in range(len(query_rows) - 1):
+                row = query_rows[idx][0]
+                if idx != 0:
+                    res += (', ' + row)
+                else:
+                    res += (row)
 
-            if len(query_rows) == 0:
-                print()
-            else:
-                res = ''
-                for idx in range(len(query_rows) - 1):
-                    row = query_rows[idx][0]
-                    if idx != 0:
-                        res += (', ' + row)
-                    else:
-                        res += (row)
+            print(res)
 
-                print(res)
-
-            cur.close()
-            db.close()
-    except Exception as ex:
-        raise(ex)
+        cur.close()
+        db.close()
