@@ -5,6 +5,9 @@ from sys import argv
 
 
 if __name__ == '__main__':
+    if len(argv) < 3:
+        exit()
+
     db = MySQLdb.connect(
         host='localhost',
         port=3306,
@@ -14,11 +17,10 @@ if __name__ == '__main__':
         )
     cur = db.cursor()
 
-    query = f'''select * from states
-        where name like binary "{argv[4]}"
-        order by states.id asc'''
+    cur.execute(f'select * from states\
+            where name like binary "{argv[4]}"\
+            order by states.id asc')
 
-    cur.execute(query)
     query_rows = cur.fetchall()
 
     for row in query_rows:
