@@ -1,22 +1,23 @@
 #!/usr/bin/python3
 """ Module for finding the peak value """
 
+
 def find_peak(list_of_integers):
     """ Returns the peak of a list """
-    l = list_of_integers
-    size = len(l)
+    lint = list_of_integers
+    size = len(lint)
     if size == 0:
         return
     if size == 1:
-        return l[0]
+        return lint[0]
 
-    for idx in range(size - 1):
-        if idx == 0 and idx + 1 < size:
-            if l[idx] >= l[idx + 1]:
-                return l[idx]
-        elif idx + 1 < size:
-            if l[idx] >= l[idx - 1] and l[idx] >= l[idx + 1]:
-                return l[idx]
+    for idx in range(size):
+        if idx == 0:
+            if lint[idx] >= lint[idx + 1]:
+                return lint[idx]
+        elif lint[idx + 1]:
+            if lint[idx] >= lint[idx - 1] and lint[idx] >= lint[idx + 1]:
+                return lint[idx]
         else:
-            if l[idx] >= l[idx - 1]:
-                return l[idx]
+            if lint[idx] >= lint[idx - 1]:
+                return lint[idx]
