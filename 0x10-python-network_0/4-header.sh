@@ -1,3 +1,3 @@
 #!/bin/bash
 # HTTP request with HEADER arguments (key: value)
-curl -H "X-School-User-Id: 89" -s $1
+curl -H "X-HolbertonSchool-User-Id: 98" -s $1
