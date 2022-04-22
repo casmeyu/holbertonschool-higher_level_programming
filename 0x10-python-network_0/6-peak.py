@@ -15,7 +15,7 @@ def find_peak(list_of_integers):
         if idx == 0:
             if lint[idx] >= lint[idx + 1]:
                 return lint[idx]
-        elif lint[idx + 1]:
+        elif idx + 1 < size:
             if lint[idx] >= lint[idx - 1] and lint[idx] >= lint[idx + 1]:
                 return lint[idx]
         else:
