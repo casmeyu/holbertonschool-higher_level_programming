@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module for finding the peak value """
 
+
 def find_peak(list_of_integers):
     """Find Peak just for the Damn checker...
 Please to find peaks in general look at the commented function below"""
