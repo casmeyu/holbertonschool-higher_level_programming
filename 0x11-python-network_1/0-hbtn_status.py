@@ -7,10 +7,11 @@ if __name__ == '__main__':
     with request.urlopen('https://intranet.hbtn.io/status') as res:
         data = res.read()
         message = "Body response:\n\
-    - type: {}\n\
-    - content: {}".format(type(data), data)
+\t- type: {}\n\
+\t- content: {}\n\
+\t- utf8 content:".format(type(data), data)
         # message = f"Body response: type: {type(data)} - content: {data}"
         # why in the hell is the f"String" throws a Syntax Error!?!?
         if res.headers.get_content_charset() == 'utf-8':
-            message += '\n    - utf8 content: OK'
+            message += ' OK'
         print(message)
