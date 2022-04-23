@@ -9,9 +9,7 @@ if __name__ == '__main__':
         message = "Body response:\n\
 \t- type: {}\n\
 \t- content: {}\n\
-\t- utf8 content:".format(type(data), data)
+\t- utf8 content: {}".format(type(data), data, data.decode('utf-8'))
         # message = f"Body response: type: {type(data)} - content: {data}"
         # why in the hell is the f"String" throws a Syntax Error!?!?
-        if res.headers.get_content_charset() == 'utf-8':
-            message += ' OK'
         print(message)
