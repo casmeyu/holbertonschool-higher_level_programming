@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """This Script sends an http request with urllib and prints some information"""
 from urllib import request
 
