@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # Uses the github api to get last 10 commits from a given repo
-import json
-from urllib import request
+import requests
 from sys import argv
 
 

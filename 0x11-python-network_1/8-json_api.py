@@ -13,8 +13,11 @@ if __name__ == '__main__':
         values['q'] = argv[1]
 
     res = requests.post(url, data=values)
-    data = res.json()
-    try:
-        print('[{}] {}'.format(data['id'], data['name']))
-    except KeyError as ex:
-        print('No result')
+    if res.headers.get('content-type') == 'application/json':
+        data = res.json()
+        try:
+            print('[{}] {}'.format(data['id'], data['name']))
+        except KeyError as ex:
+            print('No result')
+    else:
+        print('Not a valid JSON')
