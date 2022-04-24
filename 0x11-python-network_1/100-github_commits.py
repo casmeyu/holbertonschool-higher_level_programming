@@ -4,14 +4,15 @@ import requests
 from sys import argv
 
 
-max_commits = 10
-cont = 0
-url = 'https://api.github.com/repos/{}/{}/commits'.format(argv[2], argv[1])
-res = requests.get(url)
-data = res.json()
-for c in data:
-    msg = "{}: {}".format(c['sha'], c['commit']['author']['name'])
-    print(msg)
-    cont += 1
-    if cont >= max_commits:
-        break
+if __name__ == '__main__':
+    max_commits = 10
+    cont = 0
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(argv[2], argv[1])
+    res = requests.get(url)
+    data = res.json()
+    for c in data:
+        msg = "{}: {}".format(c['sha'], c['commit']['author']['name'])
+        print(msg)
+        cont += 1
+        if cont >= max_commits:
+            break
