@@ -5,7 +5,7 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    url = 'https://api.github.com/users/{}'.format(argv[1])
+    url = 'https://api.github.com/user/{}'.format(argv[1])
     res = requests.get(url, auth=(argv[1], argv[2]))
     try:
         data = res.json()
