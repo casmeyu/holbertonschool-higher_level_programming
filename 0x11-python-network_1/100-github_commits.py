@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-# Uses the github api to get last 10 commits from a given repo
+"""Uses the github api to get last 10 commits from a given repo"""
 import requests
 from sys import argv
+
 
 max_commits = 10
 cont = 0
