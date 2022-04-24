@@ -7,11 +7,8 @@ from sys import argv
 if __name__ == '__main__':
     url = 'https://api.github.com/users/{}'.format(argv[1])
     res = requests.get(url, auth=(argv[1], argv[2]))
-    if res.headers.get('content-type') == 'application/json':
+    try:
         data = res.json()
-        try:
-            print(data['id'])
-        except KeyError as ex:
-            print('None')
-    else:
+        print(data.get('id'))
+    except Exception as ex:
         print('Not a valid JSON')
