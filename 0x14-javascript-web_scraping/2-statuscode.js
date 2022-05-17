@@ -6,9 +6,9 @@ const process = require('process');
 if (process.argv.length >= 2) {
   axios.get(process.argv[2])
     .then((response) => {
-      console.log(`code: ${response.status}`);
+      console.log(`code: ${response.request.res.statusCode}`);
     })
     .catch((error) => {
-      console.log(error);
+      console.log(`code: ${error.request.res.statusCode}`);
     });
 }
