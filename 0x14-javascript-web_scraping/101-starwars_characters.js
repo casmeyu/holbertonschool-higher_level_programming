@@ -9,7 +9,7 @@ if (process.argv.length >= 3) {
   axios.get(url)
     .then((response) => {
     // handle success
-      const characters = response.data.characters;
+      const characters = response.data.characters.sort();
       characters.forEach((charUrl) => {
         axios.get(charUrl)
           .then((charResponse) => {
