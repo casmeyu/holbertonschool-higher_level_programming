@@ -8,16 +8,18 @@ if (process.argv.length >= 3) {
 
   axios.get(url)
     .then((response) => {
-    // handle success
       const characters = response.data.characters.sort();
       characters.forEach((charUrl) => {
-        axios.get(charUrl)
+        // Making asyncronous call to keep the order in the list of characters
+        (async () => {
+          await axios.get(charUrl)
           .then((charResponse) => {
             console.log(charResponse.data.name);
           })
           .catch((error) => {
             console.log(error);
           });
+        })();
       });
     })
     .catch((error) => {
