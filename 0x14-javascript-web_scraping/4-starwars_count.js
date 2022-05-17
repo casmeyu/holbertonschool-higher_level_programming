@@ -19,6 +19,6 @@ if (process.argv.length >= 3) {
       console.log(count);
     })
     .catch((error) => {
-      console.log(error);
+      console.log(0);
     });
 }
