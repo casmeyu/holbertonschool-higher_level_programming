@@ -11,7 +11,7 @@ if (process.argv.length >= 3) {
       let count = 0;
       response.data.results.forEach((film) => {
         film.characters.forEach((character) => {
-          if (character == search) {
+          if (character === search) {
             count += 1;
           }
         });
