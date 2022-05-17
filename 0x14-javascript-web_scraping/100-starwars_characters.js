@@ -10,10 +10,10 @@ if (process.argv.length >= 3) {
     .then((response) => {
     // handle success
       const characters = response.data.characters;
-      characters.forEach((char_url) => {
-        axios.get(char_url)
-          .then((char_response) => {
-            console.log(char_response.data.name);
+      characters.forEach((charUrl) => {
+        axios.get(charUrl)
+          .then((charResponse) => {
+            console.log(charResponse.data.name);
           })
           .catch((error) => {
             console.log(error);
